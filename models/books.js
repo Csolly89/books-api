@@ -8,6 +8,6 @@ let bookSchema = new mongoose.Schema({
     imageURL:{type:String}
 })
 
-module.exports = mongoose.model("books", bookSchema)
+module.exports = mongoose.model("Books", bookSchema)
 
 

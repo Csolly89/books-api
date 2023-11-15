@@ -20,14 +20,21 @@ router.get('/new', (req, res) => {
 
 // create a new book
 router.post('/', (req,res) => {
-  
+  db.Books.insertMany()
+  .then(() => {
+      res.redirect('/books')
+  })
+  .catch(err => {
+      console.log(err)
+      res.render('error404')
+  })
 })
 
 // show page for each book by id
 router.get('/books/:id', (req, res) => {
-  books.findById(req.params.id)
+  Books.findById(req.params.id)
   .then(books => {
-    res.render ('books/show', {books})
+    res.json ({Books})
   })
   .catch(err => {
     console.log('err', err)
@@ -36,13 +43,26 @@ router.get('/books/:id', (req, res) => {
 })
 
 // edit/update any book currently
-router.put('/books/:id', (req, res) => {
-  
+router.put('/:id/edit', (req, res) => {
+  db.Books.findById(req.params.id)
+  .then(books => {
+  res.render('books/edit', { place })
+  })
+  .catch(err => {
+    res.render('error404')
+  })
 })
 
 // delete each book by their id
-router.delete('/book/:id', (req, res) => {
- 
+router.delete('/:id', (req, res) => {
+  db.Books.findByIdAndDelete(req.params.id)
+  .then(books => {
+    res.redirect('/books')
+  })
+  .catch(err => {
+  console.log('err', err)
+  res.render('error404')
+  })
 })
 
 

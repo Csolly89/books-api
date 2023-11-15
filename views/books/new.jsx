@@ -1,23 +1,23 @@
 const React = require('react')
 const Def = require('../default')
 
-function new_form () {
+function new_form (data) {
     return (
         <Def>
             <main>
                 <h1>Add a New Book to our Library</h1>
-                <form method="POST" action="/places">
+                <form method="POST" action="/books">
                     <div className="form-group">
                         <label htmlFor="title">Book Title</label>
-                        <input className="form-control" id="title" name="title" required/>
+                        <input type="String" className="form-control" id="title" name="title" required/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="imageURL">Book Cover</label>
-                        <input className="form-control" id="imageURL" name="imageURL" />
+                        <input type="String" className="form-control" id="imageURL" name="imageURL" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="description">Book Summery</label>
-                        <input className="form-control" id="description" name="description" />
+                        <input type="String" className="form-control" id="description" name="description" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="quantity">Copies on hand</label>

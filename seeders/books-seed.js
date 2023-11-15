@@ -40,12 +40,6 @@ const seed = async () => {
             console.log("Failure!", err);
             process.exit();
           });
-            // .then(res.status(200).json({
-            //     message: 'Seed successful'
-            // }))
-            // .catch(res.status(400).json({
-            //     message: 'Seed unsuccessful'
-            // }))
     }
 
 seed();
