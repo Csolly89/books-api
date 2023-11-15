@@ -12,8 +12,8 @@ function Def (html) {
                 <nav>
                     <ul>
                         <li> <a href="/">Home</a> </li>
-                        <li> <a href="/places">Books</a> </li>
-                        <li> <a href="/places/new">Add a new Book</a></li>
+                        <li> <a href="/books">Books</a> </li>
+                        <li> <a href="/books/new">Add a new Book</a></li>
                     </ul>
                 </nav>
                 {html.children}

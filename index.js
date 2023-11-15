@@ -17,7 +17,7 @@ const MONGO_URI = process.env.MONGO_URI
 const PORT = process.env.PORT
 
 // Controllers
-app.use('/books', require('./controllers/booksC.js'))
+app.use('/books', require('./controllers/books.js'))
 
 
 // Routes
